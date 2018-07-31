@@ -1,0 +1,31 @@
+#container_head_text > #about{
+	position: relative;
+	top: 30%;
+	transform: translateY(-50%);
+}
+
+#about > #title{
+	margin: 0 auto;
+	font-family: Verdana;
+	font-weight: bold;
+	font-size: 2.5em;
+	color: rgb(128, 128, 128);
+}
+
+#title span{
+	font-size: 1.9em;
+	color: rgb(70, 70, 185);
+}
+
+#description{
+	font-size: 2em;
+	color: rgb(128, 128, 128);
+}
+
+#description .name{
+	color: rgb(70, 70, 185);
+}
+
+#description .joke{
+	font-style: italic;
+}

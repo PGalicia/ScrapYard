@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>pa3</display-name>
+  <servlet>
+    <servlet-name>DisplayProduct</servlet-name>
+    <servlet-class>DisplayProduct</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DisplayProduct</servlet-name>
+    <url-pattern>/displayproduct</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>HistoryProduct</servlet-name>
+    <servlet-class>HistoryProduct</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>HistoryProduct</servlet-name>
+    <url-pattern>/historyproduct</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>ReadCookies</servlet-name>
+    <servlet-class>ReadCookies</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ReadCookies</servlet-name>
+    <url-pattern>/readcookies</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>ProductInfo</servlet-name>
+    <servlet-class>ProductInfo</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ProductInfo</servlet-name>
+    <url-pattern>/productinfo</url-pattern>
+  </servlet-mapping>
+
+    <servlet>
+      <servlet-name>Jersey REST Service</servlet-name>
+      <!-- This is required. This class is obtained from your jersey-all library . Make sure it is imported into your project -->
+      <servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
+      <init-param>
+        <param-name>jersey.config.server.provider.packages</param-name>
+        <!-- Specify the package where your Resource class is located-->
+        <!-- It it highly recommended that you use packages for this project. Since Todos
+        is my resource class and it is located in the com.uci.rest.package. I provide the following value-->
+        <param-value>com.uci.rest</param-value>
+      </init-param>
+      <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+      <servlet-name>Jersey REST Service</servlet-name>
+      <!-- This is the URL pattern for the target path segment that will precede the path segment specified
+      for the resource-->
+      <url-pattern>/v1/api/*</url-pattern>
+    </servlet-mapping>
+
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>

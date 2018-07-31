@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>The Yard</title>
+
+	<link rel="icon" href="https://cdn0.iconfinder.com/data/icons/e-commerce-and-shopping-2/512/keyboard_device_computer_modern_web_typing_keys_usability_tool_equipment_computing_flat_design_icon-512.png">
+	<link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+	<!-- Navigation -->
+	<div id="container_main" class="wrapper">
+		<div id="header">
+			<ul id="primary_menu">
+				<li><span class="nav_title"><a href="home.html">HOME</a></span></li>
+				<li><span class="nav_title"><a href="about.html">ABOUT</a></span></li>
+				<li><span class="nav_title"><a href="ShoppingCart?list=CART">CART</a></span></li>				
+			</ul>
+
+			<div id="home">
+					<p id="scrap" class="logo"><a href="home.html"><span>SCRAP</span></a></p>
+					<p id="yard" class="logo"><a href="home.html"><span>YARD</span></a></p>
+			</div>
+		</div>
+	</div>
+
+	<!-- Home Header Text-->
+	<div id="container_head_text" class="wrapper">
+		<div id="header_photo">
+			<p class="phrase"><span>LOVE SUPERHEROES?</span></p>
+			<p class="phrase"><span>LIKE KEYBOARDS?</span></p>
+			<p class="phrase"><span>COME WASTE YOUR MONEY HERE</span></p>
+		</div>
+	</div>
+
+
+
+	<!-- Product Listing -->
+	<div id="container_items" class="wrapper"></div>
+
+	<script type="text/javascript">
+
+		var xmlhttp2 = new XMLHttpRequest();
+    	xmlhttp2.onreadystatechange = function() {
+        	if (xmlhttp2.readyState == 4 && xmlhttp2.status == 200) {
+            	document.getElementById("container_items").innerHTML = xmlhttp2.responseText;
+        	}
+    	};
+    	//xmlhttp2.open("GET", "/Keyboard/displayproduct", true);
+    	xmlhttp2.open("GET", "displayproduct", true);
+    	xmlhttp2.send();
+
+    	function saveCookie(id) {
+			var xmlhttp = new XMLHttpRequest();
+	    	xmlhttp.onreadystatechange = function() {
+	        	if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+	            	// document.getElementById("container_items").innerHTML = xmlhttp.responseText;
+	        	}
+	    	};
+	    	//xmlhttp.open("GET", "/Keyboard/historyproduct?id=" + id, true);
+	    	xmlhttp.open("GET", "historyproduct?id=" + id, true);
+	    	xmlhttp.send();
+    	}
+	</script>
+
+</body>
+</html>
